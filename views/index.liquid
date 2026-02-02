@@ -1,14 +1,57 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
-
-  <p>{{ person.name }}</p>
-
-  <footer></footer>
-</article>
+<main>
+      <article>
+        <section>
+          <img src="./assets/paspoort.png" />
+        </section>
+        <!-- Backside van de paspoort -->
+        <section></section>
+        <section>
+          <div>
+            <h1>Republique Francaise</h1>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <h2>Naam</h2>
+                {{person.name}}
+              </li>
+              <li>
+                <h2>Plaats</h2>
+                <p>Alkmaar</p>
+              </li>
+              <li>
+                <h2>Geboortedatum</h2>
+                <p>16 05 2004</p>
+              </li>
+              <li>
+                <h2>Studie</h2>
+                <p>Front-end development en design</p>
+              </li>
+              <li class="alert">
+                <h2>Vooropleiding</h2>
+                <p>Software development</p>
+              </li>
+              <li>
+                <h2>Studenten nummer</h2>
+                <p>500964123</p>
+              </li>
+              <li>
+                <h2>Skills</h2>
+                <p class="item">- Deadline gericht werken</p>
+                <p class="item">- Discipline</p>
+                <p class="item">- Leergierig</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="last-text">
+              >a>>>>Jamie>>Vos>>>>>>>>>> >>>>>>90210>>Hover mij>>>
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
 
 {% render 'partials/foot.liquid' %}

@@ -20,6 +20,8 @@ main {
   align-items: end;
   padding-bottom: 2rem;
   justify-content: center;
+
+  /* Camera instelling */
   perspective: 50em;
   transform-style: preserve-3d;
 }
@@ -29,8 +31,8 @@ article {
   width: 100%;
   max-width: 30rem;
   border-radius: 0.8rem;
-  background-color: white;
   transform-style: preserve-3d;
+  background-color: white;
 
   section {
     height: 100%;
@@ -39,7 +41,6 @@ article {
 
     &:nth-of-type(1) {
       backface-visibility: hidden;
-
       img {
         width: 100%;
         border-radius: 0.8rem;
@@ -76,6 +77,35 @@ article {
       position: absolute;
       top: 0;
       z-index: -1;
+      display: flex;
+      align-items: end;
+      width: 100%;
+      justify-content: space-between;
+      padding: 1rem;
+      gap: 1rem;
+      background: white;
+
+      img {
+        width: 100%;
+      }
+
+      span {
+        background: grey;
+        height: 5rem;
+        border-radius: 0.3rem;
+      }
+
+      span:nth-of-type(1) {
+        width: 25%;
+      }
+
+      span:nth-of-type(2) {
+        width: 50%;
+      }
+
+      span:nth-of-type(3) {
+        width: 25%;
+      }
     }
   }
 }

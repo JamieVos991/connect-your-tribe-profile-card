@@ -14,7 +14,7 @@ const personResponse = await fetch('https://fdnd.directus.app/items/person/' + p
 
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 const personResponseJSON = await personResponse.json()
-    
+
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(personResponseJSON)
@@ -38,12 +38,25 @@ app.set('views', './views')
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
+const customData = JSON.parse(personResponseJSON.data.custom)
+console.log(customData);
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
 app.get('/', async function (request, response) {
    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('index.liquid', {person: personResponseJSON.data})
+   response.render('index.liquid', {
+    person: personResponseJSON.data,
+    custom: customData  
+  })
+})
+
+app.get('/jamie', async function (request, response) {
+   // Render practice.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+   response.render('jamie.liquid', {
+    person: personResponseJSON.data,
+    custom: customData  
+  })
 })
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
@@ -70,3 +83,4 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
